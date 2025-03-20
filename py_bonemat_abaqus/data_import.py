@@ -12,7 +12,7 @@ __all__ = ['import_parameters','import_mesh','import_ct_data']
 #-------------------------------------------------------------------------------
 import sys
 import os
-import dicom
+import pydicom
 from numpy import mean, array, concatenate, linspace, arange, size
 from numpy import zeros, floor, diff, prod, matrix
 import re
