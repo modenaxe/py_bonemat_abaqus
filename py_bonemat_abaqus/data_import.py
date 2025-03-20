@@ -372,7 +372,20 @@ def _create_part(name, elements, elename, eletype, nodes, transform=[[0.,0.,0]],
     # add elements to part
     for e in elements:
         pts = [nodes[n] for n in e[1:]]
-        exec('ele = ' + eletype + '(int(e[0]), pts, e[1:])')
+        # FIX TO UPGRADE TO PYTHON 3:
+        # it is bad practice to use exec or eval.
+        # replaced with choice of elements.
+        # needs updates if additional elements are added
+        # exec('ele = ' + eletype + '(int(e[0]), pts, e[1:])')
+        if eletype == 'linear_tet':
+            ele = linear_tet(int(e[0]), pts, e[1:])
+        if eletype == 'quad_tet':
+            ele = quad_tet(int(e[0]), pts, e[1:])
+        if eletype == 'linear_wedge':
+            ele = linear_wedge(int(e[0]), pts, e[1:])
+        if eletype == 'linear_hex':
+            ele = linear_hex(int(e[0]), pts, e[1:])
+        ################################
         new_part.add_element(ele)
         
     return new_part
