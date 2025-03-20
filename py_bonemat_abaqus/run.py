@@ -11,7 +11,7 @@ __all__ = ['run']
 # Import modules
 #-------------------------------------------------------------------------------
 import sys
-import os
+# import os
 from py_bonemat_abaqus import general, data_import, calc, data_output
 from py_bonemat_abaqus.version import __version__
 import time
@@ -84,4 +84,6 @@ def run(argv0, argv1, argv2):
     """)
     tt = time.time() - t
     print(" Elapsed time: " + repr(tt))
+    sys.exit(0)
+    # discourage to use this exit: see https://stackoverflow.com/questions/19747371/python-exit-commands-why-so-many-and-when-should-each-be-used
     os._exit(0)
