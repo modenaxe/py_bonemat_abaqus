@@ -30,7 +30,9 @@ def run(argv0, argv1, argv2):
     year = d.isocalendar()[0]
     print("""
     ************** PY_BONEMAT ABAQUS """ + __version__ + """ ************
-    *** Elise Pegg,  University of Bath,   """ + month + """ """ + repr(year) + """ ***
+    *** Elise Pegg (Author),     University of Bath,  September  2016 ***
+    *** Luca Modenese (Update),  Univ. of New South Wales, March 2025 ***
+    
     ***************************************************
     """)
     
