@@ -11,10 +11,10 @@ __all__ = ['vtk_data','linear_tet','quad_tet','linear_wedge','linear_hex','part'
 # Import modules
 #-------------------------------------------------------------------------------
 from numpy.linalg import det
-from numpy import mean, arange, matrix, array
+from numpy import mean, arange, array#, matrix,
 from copy import deepcopy
 from bisect import bisect_left, bisect_right
-from itertools import product
+#from itertools import product
 
 #-------------------------------------------------------------------------------
 # Part class
@@ -397,8 +397,11 @@ class linear_wedge:
 # Hexahedral element
 class linear_hex:
     """ Hexahedral element class """
-    
-    __slots__ = ("indx", "pts", "nodes", "jacobian")
+    # FIX FOR PYTHON 3: slots are equivalent to private variable,
+    # but here jacobian is a function and interpreter doesn't like it.
+    # the other elements do not have jacobian in __slots__ either!
+    #__slots__ = ("indx", "pts", "nodes", "jacobian")
+    __slots__ = ("indx", "pts", "nodes")
     
     def __init__(self, indx, pts, nodes):
         self.indx = indx
