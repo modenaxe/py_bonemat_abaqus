@@ -401,7 +401,7 @@ class linear_hex:
     # but here jacobian is a function and interpreter doesn't like it.
     # the other elements do not have jacobian in __slots__ either!
     #__slots__ = ("indx", "pts", "nodes", "jacobian")
-    __slots__ = ("indx", "pts", "nodes")
+    __slots__ = ("indx", "pts", "nodes", "volume")
     
     def __init__(self, indx, pts, nodes):
         self.indx = indx
